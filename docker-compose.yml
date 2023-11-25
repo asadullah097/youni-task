@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: my-mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: youni_db
+      MYSQL_USER: youni_user
+      MYSQL_PASSWORD: youniPassword
+    ports:
+      - "3307:3306" # Adjusted port mapping
+    volumes:
+      - youni_mysql_data:/var/lib/mysql # Adjusted volume name
+
+volumes:
+  youni_mysql_data: # Adjusted volume name
